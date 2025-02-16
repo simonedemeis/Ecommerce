@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 
+        Definisce il tipo di documento come HTML5.
+        Il linguaggio della pagina è impostato su inglese con "lang=en".
+    -->
+
+    <meta charset="utf-8"/>
+    <!-- 
+        Specifica la codifica dei caratteri come UTF-8, supportando tutti i caratteri speciali.
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- 
+        Rende il layout responsive, adattandolo ai dispositivi mobili.
+        "width=device-width" imposta la larghezza iniziale alla dimensione dello schermo del dispositivo.
+        "initial-scale=1.0" assicura che il sito venga visualizzato senza zoom iniziale.
+    -->
+
+    <title>@ViewData["Title"] - Ecommerce</title>
+    <!-- 
+        Imposta il titolo della pagina dinamicamente usando ViewData["Title"].
+        Il titolo sarà specificato nelle singole viste e verrà concatenato con "- Ecommerce".
+    -->
+
+    <script type="importmap"></script>
+    <!-- 
+        (Placeholder) Per definire le dipendenze JavaScript utilizzando import maps.
+        Se non viene configurato, questo script non ha effetto.
+    -->
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <!-- 
+        Importa il file CSS di Bootstrap per fornire uno stile predefinito alla pagina.
+    -->
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <!-- 
+        Importa il file CSS personalizzato "site.css".
+        "asp-append-version=true" assicura che venga ricaricato quando cambia, evitando problemi di cache.
+    -->
+
+    <link rel="stylesheet" href="~/Ecommerce.styles.css" asp-append-version="true"/>
+    <!-- 
+        Importa un file CSS specifico dell'applicazione (generato dal framework se esiste).
+    -->
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <!-- 
+            Navbar di Bootstrap con stile chiaro (bg-white) e bordo inferiore con ombreggiatura.
+            La classe "navbar-expand-sm" permette l'espansione della barra di navigazione su schermi più grandi.
+        -->
+
+        <div class="container-fluid">
+            <!-- 
+                Contenitore fluido che riempie tutta la larghezza dello schermo.
+            -->
+
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Ecommerce</a>
+            <!-- 
+                Logo/testo della navbar che funge da link alla homepage.
+                "asp-controller" e "asp-action" generano dinamicamente l'URL della home.
+            -->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- 
+                Pulsante per aprire/chiudere il menu della navbar sui dispositivi mobili.
+                Il data-bs-toggle="collapse" permette di espandere/ridurre la navbar.
+            -->
+
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <!-- 
+                    Contenitore degli elementi della navbar che si nasconde automaticamente sui dispositivi mobili.
+                -->
+
+                <ul class="navbar-nav flex-grow-1">
+                    <!-- 
+                        Lista degli elementi della navbar. La classe "flex-grow-1" permette di espandere la navbar.
+                    -->
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <!-- Link alla home -->
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <!-- Link alla pagina Privacy -->
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Product" asp-action="Index">Products</a>
+                        <!-- Link alla home -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <!-- 
+        Contenitore principale che mantiene il layout centrato con margini laterali.
+    -->
+
+    <main role="main" class="pb-3">
+        <!-- 
+            Sezione principale del contenuto della pagina.
+            Il contenuto specifico della vista verrà inserito qui.
+        -->
+
+        @RenderBody()
+        <!-- 
+            Segnaposto per il contenuto delle singole viste.
+            Ogni vista sarà caricata qui all'interno del layout.
+        -->
+    </main>
+</div>
+
+<footer class="border-top footer text-muted">
+    <!-- 
+        Footer con bordo superiore e testo in grigio attenuato.
+    -->
+
+    <div class="container">
+        &copy; 2025 - Ecommerce - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <!-- 
+            Testo del copyright con link alla pagina Privacy.
+        -->
+    </div>
+</footer>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<!-- 
+    Importa jQuery, necessario per alcune funzionalità interattive di Bootstrap.
+-->
+
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- 
+    Importa il file JavaScript di Bootstrap che gestisce elementi interattivi (es. menu a discesa, modali).
+-->
+
+<script src="~/js/site.js" asp-append-version="true"></script>
+<!-- 
+    Importa uno script JavaScript personalizzato per il sito.
+    "asp-append-version=true" garantisce che venga ricaricato se viene modificato.
+-->
+
+@await RenderSectionAsync("Scripts", required: false)
+<!-- 
+    Permette di includere script personalizzati nelle singole viste.
+    Se una vista ha una sezione "Scripts", verrà eseguita qui.
+    Se "required" fosse impostato su "true", ogni vista dovrebbe definire questa sezione.
+-->
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿@* 
+    Questo file contiene i riferimenti agli script di validazione utilizzati nelle pagine che richiedono 
+    il supporto della validazione client-side in un'applicazione ASP.NET Core.
+    È inclusa una sezione che carica gli script necessari per la gestione delle validazioni dei form.
+*>
+
+@* Carica i necessari script di validazione ASP.NET Core *@
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<!-- 
+Include il plugin jQuery Validation, che fornisce funzionalità di validazione per i form tramite JavaScript.
+Questa libreria esegue la validazione dei dati lato client prima che vengano inviati al server.
+È utilizzata in combinazione con i metodi di validazione ASP.NET Core.
+-->
+
+<script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+<!-- 
+Include la versione "Unobtrusive" della validazione jQuery, che è integrata con ASP.NET Core.
+Questa libreria abilita la validazione dei form senza necessità di scrivere codice JavaScript esplicito,
+sfruttando gli attributi HTML (come `data-val`, `data-val-required`) per eseguire la validazione in modo non intrusivo.
+È utile per l'integrazione fluida con il framework di validazione lato server di ASP.NET.
+-->

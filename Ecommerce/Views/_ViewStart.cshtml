@@ -1,0 +1,23 @@
+﻿@{
+    // Il file _ViewStart.cshtml viene eseguito automaticamente prima di ogni vista (View).
+    // Serve per impostare configurazioni comuni a tutte le viste, come il layout predefinito.
+
+    // Imposta il layout predefinito per tutte le viste.
+    // "_Layout" fa riferimento al file _Layout.cshtml, che di solito si trova in "Views/Shared/".
+    // Il layout è una sorta di "pagina master" che contiene elementi comuni a tutte le pagine
+    // (es. header, footer, menu di navigazione).
+    Layout = "_Layout";
+
+    // Questo approccio evita di dover specificare il layout manualmente in ogni vista.
+    // Se necessario, il layout può essere cambiato dinamicamente in base a condizioni specifiche.
+    
+    // Esempio di layout dinamico:
+    // if (User.IsInRole("Admin"))
+    // {
+    //     Layout = "_AdminLayout"; // Usa un layout diverso per gli amministratori
+    // }
+    // else
+    // {
+    //     Layout = "_Layout"; // Usa il layout predefinito per gli utenti normali
+    // }
+}

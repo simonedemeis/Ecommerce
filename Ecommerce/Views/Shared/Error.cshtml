@@ -1,0 +1,65 @@
+﻿@model ErrorViewModel
+@{
+    // Il file Error.cshtml viene utilizzato per visualizzare una pagina di errore generica quando qualcosa va storto durante il processo di elaborazione della richiesta in un'applicazione ASP.NET Core. Fornisce informazioni generali sugli errori e suggerisce come abilitare la modalità di sviluppo per ottenere dettagli più specifici, utili per il debug.
+    //
+    
+    ViewData["Title"] = "Error";
+    <!--
+        Imposta il titolo della pagina come "Error", che sarà visibile nella scheda del browser.
+        ViewData["Title"] è un dizionario che può essere utilizzato per passare dati dalla logica di controllo alla vista.
+    -->
+}
+
+<h1 class="text-danger">Error.</h1>
+<!--
+    Visualizza un'intestazione di primo livello con il testo "Error", stilizzato con il colore rosso (text-danger) per enfatizzare il messaggio di errore.
+-->
+
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+<!--
+    Un altro messaggio di errore, con un sottotitolo che indica che si è verificato un errore durante l'elaborazione della richiesta.
+    Anche questo messaggio è stilizzato in rosso per richiamare l'attenzione.
+-->
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+    <!--
+        Se la proprietà ShowRequestId è vera, viene visualizzato l'ID della richiesta.
+        L'ID della richiesta è utile per il debug e per tracciare l'errore nel sistema di logging o nei log del server.
+        Il codice mostra l'ID della richiesta all'interno di un tag <code> per enfatizzare il valore come codice.
+    -->
+}
+
+<h3>Development Mode</h3>
+<!--
+    Un'intestazione di terzo livello che introduce il suggerimento di usare l'ambiente di sviluppo.
+-->
+
+<p>
+    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+</p>
+<!--
+    Un messaggio che spiega che, abilitando l'ambiente di sviluppo, sarà possibile visualizzare informazioni più dettagliate sull'errore.
+    Queste informazioni possono includere lo stack trace e i dettagli sull'eccezione che ha causato l'errore.
+-->
+
+<p>
+    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
+    It can result in displaying sensitive information from exceptions to end users.
+</p>
+<!--
+    Un avviso che indica che l'ambiente di sviluppo non dovrebbe essere abilitato nelle applicazioni in produzione, poiché potrebbe esporre informazioni sensibili
+    sugli errori agli utenti finali.
+-->
+
+<p>
+    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
+    and restarting the app.
+</p>
+<!--
+    Una descrizione che spiega come abilitare l'ambiente di sviluppo localmente, modificando la variabile di ambiente ASPNETCORE_ENVIRONMENT a "Development"
+    e riavviando l'applicazione.
+-->
