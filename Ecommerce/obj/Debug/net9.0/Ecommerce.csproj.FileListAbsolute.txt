@@ -95,3 +95,4 @@
 /Users/simonedemeis/RiderProjects/Epicode/Ecommerce/Ecommerce/obj/Debug/net9.0/Ecommerce.pdb
 /Users/simonedemeis/RiderProjects/Epicode/Ecommerce/Ecommerce/obj/Debug/net9.0/Ecommerce.genruntimeconfig.cache
 /Users/simonedemeis/RiderProjects/Epicode/Ecommerce/Ecommerce/obj/Debug/net9.0/ref/Ecommerce.dll
+/Users/simonedemeis/RiderProjects/Epicode/Ecommerce/Ecommerce/obj/Debug/net9.0/Ecommerce.sourcelink.json
