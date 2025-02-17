@@ -87,4 +87,10 @@ public class ProductController : Controller
         
         return RedirectToAction("Index");
     }
+
+    public IActionResult GetDocument()
+    {
+        var file = System.IO.File.ReadAllBytes("wwwroot/Documents/httpcontext.pdf");
+        return File(file, "application/pdf", "httpcontext.pdf");
+    }
 }

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/Ecommerce.i59gsvh1rz.bundle.scp.css"
     },
     {
+      "Id": "/Users/simonedemeis/RiderProjects/Epicode/Ecommerce/Ecommerce/wwwroot/Documents/httpcontext.pdf",
+      "PackagePath": "staticwebassets/Documents/httpcontext.pdf"
+    },
+    {
       "Id": "/Users/simonedemeis/RiderProjects/Epicode/Ecommerce/Ecommerce/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },

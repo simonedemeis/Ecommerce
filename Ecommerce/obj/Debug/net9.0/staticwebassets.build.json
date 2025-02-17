@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IDS4O02YSfIGkd31FpWnI1iC52LniW0kbchC1yieBvk=",
+  "Hash": "187Mi0xmvg0mMefrQD3/MHi+2OvA1+kgtmNE0tGq38E=",
   "Source": "Ecommerce",
   "BasePath": "_content/Ecommerce",
   "Mode": "Default",
@@ -1422,6 +1422,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
+    },
+    {
+      "Identity": "/Users/simonedemeis/RiderProjects/Epicode/Ecommerce/Ecommerce/wwwroot/Documents/httpcontext.pdf",
+      "SourceId": "Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/simonedemeis/RiderProjects/Epicode/Ecommerce/Ecommerce/wwwroot/",
+      "BasePath": "_content/Ecommerce",
+      "RelativePath": "Documents/httpcontext#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vwlp4rvh7t",
+      "Integrity": "0cSHu5Q9YyjsCL71ErGO3T6Ag7DfxIxUdwsx3FeR1KM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Documents/httpcontext.pdf"
     },
     {
       "Identity": "/Users/simonedemeis/RiderProjects/Epicode/Ecommerce/Ecommerce/wwwroot/favicon.ico",
@@ -3022,6 +3043,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-B2NcGeycNm1fppl5ueYw/SoIaM1eiU6mnFitSmrq4lY="
+        }
+      ]
+    },
+    {
+      "Route": "Documents/httpcontext.pdf",
+      "AssetFile": "/Users/simonedemeis/RiderProjects/Epicode/Ecommerce/Ecommerce/wwwroot/Documents/httpcontext.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2104"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0cSHu5Q9YyjsCL71ErGO3T6Ag7DfxIxUdwsx3FeR1KM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 17 Feb 2025 21:04:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0cSHu5Q9YyjsCL71ErGO3T6Ag7DfxIxUdwsx3FeR1KM="
+        }
+      ]
+    },
+    {
+      "Route": "Documents/httpcontext.vwlp4rvh7t.pdf",
+      "AssetFile": "/Users/simonedemeis/RiderProjects/Epicode/Ecommerce/Ecommerce/wwwroot/Documents/httpcontext.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2104"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0cSHu5Q9YyjsCL71ErGO3T6Ag7DfxIxUdwsx3FeR1KM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 17 Feb 2025 21:04:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vwlp4rvh7t"
+        },
+        {
+          "Name": "label",
+          "Value": "Documents/httpcontext.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0cSHu5Q9YyjsCL71ErGO3T6Ag7DfxIxUdwsx3FeR1KM="
         }
       ]
     },

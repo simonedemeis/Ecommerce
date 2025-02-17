@@ -3,6 +3,88 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
+      "Route": "Documents/httpcontext.pdf",
+      "AssetFile": "Documents/httpcontext.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2104"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0cSHu5Q9YyjsCL71ErGO3T6Ag7DfxIxUdwsx3FeR1KM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 17 Feb 2025 21:04:17 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0cSHu5Q9YyjsCL71ErGO3T6Ag7DfxIxUdwsx3FeR1KM="
+        }
+      ]
+    },
+    {
+      "Route": "Documents/httpcontext.vwlp4rvh7t.pdf",
+      "AssetFile": "Documents/httpcontext.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2104"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0cSHu5Q9YyjsCL71ErGO3T6Ag7DfxIxUdwsx3FeR1KM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 17 Feb 2025 21:04:17 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vwlp4rvh7t"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0cSHu5Q9YyjsCL71ErGO3T6Ag7DfxIxUdwsx3FeR1KM="
+        },
+        {
+          "Name": "label",
+          "Value": "Documents/httpcontext.pdf"
+        }
+      ]
+    },
+    {
       "Route": "Ecommerce.i59gsvh1rz.styles.css",
       "AssetFile": "Ecommerce.styles.css.gz",
       "Selectors": [
