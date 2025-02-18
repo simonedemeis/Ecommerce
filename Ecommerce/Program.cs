@@ -1,11 +1,15 @@
 // Creazione di un oggetto WebApplicationBuilder che gestisce la configurazione dell'applicazione.
 // 'args' rappresenta gli argomenti della riga di comando passati all'applicazione al momento dell'avvio.
+
+using Ecommerce.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Registrazione dei servizi nel contenitore delle dipendenze dell'applicazione.
 // In questo caso, viene registrato il servizio MVC (Model-View-Controller) con supporto per le viste.
 // Questo servizio consente di gestire richieste HTTP utilizzando i controller e di restituire risposte basate su file di visualizzazione (CSHTML).
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<ProductService>();
 
 // Creazione dell'oggetto WebApplication basato sulla configurazione definita nel builder.
 // Questo oggetto rappresenta l'applicazione ASP.NET Core e permette di configurare il middleware e la gestione delle richieste HTTP.

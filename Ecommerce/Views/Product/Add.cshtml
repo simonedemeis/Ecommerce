@@ -11,8 +11,6 @@
 
 <div>
     <form asp-controller="Product" asp-action="AddProduct" method="post">
-        @Html.AntiForgeryToken() <!-- Protezione CSRF -->
-
         <div class="form-group">
             <label asp-for="Name" class="control-label"></label>
             <input asp-for="Name" class="form-control" />

@@ -1,65 +1,35 @@
 using Ecommerce.Models;
+using Ecommerce.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.Controllers;
 
+[Route("products")]
 public class ProductController : Controller
 {
-    //Lista statica di prodotti di partenza per popolare la tabella. Simula i prodotti in un database.
-    private static readonly List<Category> Categories = new()
+
+    private readonly ProductService _productService;
+    public ProductController(ProductService productService)
     {
-        new Category { Id = Guid.Parse("3f4e1a89-2d45-4f8d-9a7e-123456789abc"), Title = "Electronics" },
-        new Category { Id = Guid.Parse("a1b2c3d4-e5f6-4789-abcd-9876543210ef"), Title = "Literature" },
-        new Category { Id = Guid.Parse("fedcba98-7654-4321-0fed-cba987654321"), Title = "Food" }
-    };
-    
-    //Lista statica di categorie per popolare la select nel form di inserimento di un nuovo prodotto. Simula le categorie in un db.
-    private static List<Product> Products = new List<Product>()
-    {
-        new Product()
-        {
-            Id = Guid.NewGuid(),
-            Name = "Pc",
-            Price = 1000,
-            Description = "Powerful pc",
-            Category = Categories[0]
-        },
-        new Product()
-        {
-            Id = Guid.NewGuid(),
-            Name = "Tv",
-            Price = 2000,
-            Description = "A normal television",
-            Category = Categories[0]
-        },
-        new Product()
-        {
-            Id = Guid.NewGuid(),
-            Name = "Book",
-            Price = 1000,
-            Description = "A book",
-            Category = Categories[1]
-        }
-    };
+        _productService = productService;
+    }
     
     public IActionResult Index()
     {
-
-        var products = Products;
-        
         var productsList = new ProductsListModel()
         {
-            Products = products
+            Products = _productService.Products
         };
         
         return View(productsList);
     }
     
+    [Route("add")]
     public IActionResult Add()
     {
         var addProduct = new AddProduct()
         {
-            Categories = Categories
+            Categories = _productService.Categories
         };
         return View(addProduct);
     }
@@ -79,18 +49,65 @@ public class ProductController : Controller
             Id = Guid.NewGuid(),
             Name = addProduct.Name,
             Description = addProduct.Description,
-            Category = Categories.FirstOrDefault(x => x.Id == addProduct.CategoryId),
+            Category = _productService.Categories.FirstOrDefault(x => x.Id == addProduct.CategoryId),
             Price = addProduct.Price
         };
         
-        Products.Add(product);
+        _productService.Products.Add(product);
         
         return RedirectToAction("Index");
     }
 
+    [HttpGet("product/edit/{id:guid}")]
+    public IActionResult Edit(Guid id)
+    {
+        var product = _productService.Products.FirstOrDefault(x => x.Id == id);
+
+        if (product == null)
+        {
+            return RedirectToAction("Index");
+        }
+        
+        return View(new EditProduct()
+        {
+            Id = product.Id,
+            Name = product.Name,
+            Description = product.Description,
+            Categories = _productService.Categories,
+            Price = product.Price
+        });
+    }
+
+    [HttpPost("product/edit/{id:guid}")]
+    [ValidateAntiForgeryToken]
+    public IActionResult SaveEdit(Guid id, EditProduct editProduct)
+    {
+        if (!ModelState.IsValid)
+        {
+            return RedirectToAction("Edit");
+        }
+        
+        var existingProduct = _productService.Products.FirstOrDefault(x => x.Id == editProduct.Id);
+
+        if (existingProduct == null)
+        {
+            return RedirectToAction("Index");
+        }
+        
+        existingProduct.Name = editProduct.Name;
+        existingProduct.Description = editProduct.Description;
+        existingProduct.Price = editProduct.Price;
+        existingProduct.Category = _productService.Categories.FirstOrDefault(x => x.Id == editProduct.CategoryId);
+        
+        return RedirectToAction("Index");
+    }
+
+    [Route("product/get-doc")]
     public IActionResult GetDocument()
     {
         var file = System.IO.File.ReadAllBytes("wwwroot/Documents/httpcontext.pdf");
         return File(file, "application/pdf", "httpcontext.pdf");
     }
+    
+    
 }

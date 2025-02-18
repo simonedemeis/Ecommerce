@@ -18,6 +18,7 @@
             <th>Categoria</th>
             <th>Prezzo</th>
             <th>Descrizione</th>
+            <th>Azioni</th>
         </tr>
         </thead>
         <tbody>
@@ -29,6 +30,9 @@
                 <td>@product.Category?.Title</td>
                 <td>@product.Price.ToString("C")</td>
                 <td>@product.Description</td>
+                <td>
+                    <a asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id">Modifica</a>
+                </td>
             </tr>
         }
         </tbody>
